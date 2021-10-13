@@ -23,7 +23,7 @@ MAXPOSTCOUNT = max_post_count
 def get_driver():
     #　ヘッドレスモードでブラウザを起動
     options = Options()
-    # options.add_argument('--headless')
+    options.add_argument('--headless')
     # ブラウザーを起動
     driver = webdriver.Chrome(CHROMEDRIVER, options=options)
     return driver
