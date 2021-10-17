@@ -3,7 +3,7 @@
 Seleniumを利用して、instagramの画像を保存するコードです
 
 # 実行例
-![Uploading gtSPEv9yBCktB1H1634472210_1634472253.png…]()
+
 
 
 # 特徴
