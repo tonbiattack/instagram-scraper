@@ -100,7 +100,8 @@ if __name__ == "__main__":
     driver = get_driver()
     # ログイン
     login_flg = do_login(driver)
-    url = "https://www.instagram.com/kira_yokoyama_/"
+    #スクレイピングしたいユーザーのアカウントのURL
+    url = "user_name_you_want_to_scraiping"
     driver.get(url)
     time.sleep(2)
   
