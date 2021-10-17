@@ -3,7 +3,7 @@
 Seleniumを利用して、instagramの画像を保存するコードです
 
 # 実行例
-
+https://github.com/tonbiattack/instagram_scraper/issues/1#issue-1028303684
 
 
 # 特徴
