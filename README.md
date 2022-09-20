@@ -1,6 +1,7 @@
 # Instagram_scraper
 
-Seleniumを利用して、instagramの画像を保存するコードです
+Seleniumを利用して、instagramの画像を保存するコードです。
+現在(2022/9/30)インスタグラムの仕様が変わったのかボット判定されて動きません。
 
 # 実行例
 ![gtSPEv9yBCktB1H1634472210_1634472253](https://user-images.githubusercontent.com/40497724/137626623-6cbaa484-603b-464a-b0a3-84aeb4d65634.png)
