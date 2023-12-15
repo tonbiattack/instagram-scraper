@@ -16,12 +16,17 @@ DIRECTORY = "directory_path"
 MAX_POST_COUNT = 100  # 例: 最大投稿数を100に設定
 
 def get_driver():
+    """Seleniumドライバーのインスタンスを初期化し、返却する関数。
+    Chromeブラウザをヘッドレスモードで起動するためのオプションを設定する。"""
     options = Options()
     options.add_argument('--headless')
     driver = webdriver.Chrome(CHROMEDRIVER_PATH, options=options)
     return driver
 
 def do_login(driver):
+    """Instagramにログインを試みる関数。
+    ユーザー名とパスワードを入力し、ログインボタンをクリックする。
+    ログイン成功の確認は、URLがログインページから変更されたかで判断する。"""
     login_url = DOMAIN_BASE + "accounts/login/"
     driver.get(login_url)
     try:
@@ -43,6 +48,9 @@ def do_login(driver):
         return False
 
 def scroll_to_last_element(driver, footer_move_flag):
+    """ページの最後までスクロールする関数。
+    footer_move_flagがTrueの場合、ページの最下部までスクロールする。
+    Falseの場合、ページ上の最後の要素までスクロールする。"""
     try:
         if footer_move_flag:
             last_elem = driver.find_element_by_id("fb-root")
@@ -58,6 +66,8 @@ def scroll_to_last_element(driver, footer_move_flag):
         return False
 
 def scrape_posts(driver, user_url, max_post_count):
+    """指定されたユーザーのInstagramページから投稿のURLを収集する関数。
+    最大投稿数に達するまでページをスクロールし、各投稿のリンクをリストに保存する。"""
     driver.get(user_url)
     time.sleep(2)
 
@@ -75,6 +85,8 @@ def scrape_posts(driver, user_url, max_post_count):
     return href_list
 
 def download_images(driver, href_list):
+    """収集した投稿のURLから画像をダウンロードする関数。
+    各投稿にアクセスし、画像をローカルに保存する。"""
     for num, href in enumerate(href_list, start=1):
         driver.get(href)
         time.sleep(2)
